@@ -98,9 +98,11 @@ try:
     df = pd.read_csv(
         INPUT_FILE,
         header=None,
-        dtype=str
+        dtype=str,
+        usecols=[0],
+        engine="python",
+        on_bad_lines="skip"
     )
-
     total_rows = len(df)
 
     print(f"\nتعداد کل ردیف‌ها: {total_rows}")
